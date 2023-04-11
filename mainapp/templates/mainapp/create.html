@@ -1,0 +1,14 @@
+{% extends 'mainapp/base.html' %}
+{% block content %}
+    <div class="CRUD-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal">CRUD</h1>
+      <p class="fs-5 text-muted">An example how to Create data in DJANGO.</p>
+    </div>
+<div>
+    <form method="post">{% csrf_token %}
+    {{ form.as_table }}
+    <input type="submit" value="Save" class="btn btn-primary">
+</form>
+</div>
+  </header>
+{% endblock %}
