@@ -1,6 +1,20 @@
-from django.shortcuts import render, HttpResponse
+import django.contrib.messages
+from django.shortcuts import render
+from django.views.generic import CreateView
+from django.urls import reverse_lazy
+from . import models
+from django.contrib.messages.views import SuccessMessageMixin
 
 
 # Create your views here.
 def index(request):
-    return render(request, 'mainapp/index.html')
+    names = models.NameModel.objects.all().count()
+    return render(request, 'mainapp/index.html', {'names': names})
+
+
+class CreateData(SuccessMessageMixin, CreateView):
+    template_name = 'mainapp/create.html'
+    model = models.NameModel
+    fields = ['name', 'age']
+    success_url = reverse_lazy('mainapp:index')
+    success_message = "%(name)s was created successfully"
