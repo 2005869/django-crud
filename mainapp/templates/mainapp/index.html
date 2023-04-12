@@ -13,15 +13,17 @@
       </div>
     {% endfor %}
 {% endif %}
-  <main>
-    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+  <div class="container">
+    <div class="row text-center">
+      <h1>Class Based Views</h1>
+    </div>
+    <div class="row row-cols-1 row-cols-md-4 mb-3 text-center">
       <div class="col">
         <div class="card mb-4 rounded-3 shadow-sm">
           <div class="card-header py-3">
             <h4 class="my-0 fw-normal"><b>C</b>reate</h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title CRUD-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
             <ul class="list-unstyled mt-3 mb-4">
               <li>{{ names }} name{{ names|pluralize }} in database</li>
             </ul>
@@ -35,9 +37,8 @@
             <h4 class="my-0 fw-normal"><b>R</b>ead</h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title CRUD-card-title">$15<small class="text-muted fw-light">/mo</small></h1>
             <ul class="list-unstyled mt-3 mb-4">
-              <li>20 users included</li>
+              <li>See all registers</li>
             </ul>
             <a href="{% url 'mainapp:read' %}" type="button" class="w-100 btn btn-lg btn-primary">Read data</a>
           </div>
@@ -49,9 +50,8 @@
             <h4 class="my-0 fw-normal"><b>U</b>pdate</h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title CRUD-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
             <ul class="list-unstyled mt-3 mb-4">
-              <li>30 users included</li>
+              <li>Click in Edit to update</li>
             </ul>
             <a href="{% url 'mainapp:read' %}" type="button" class="w-100 btn btn-lg btn-primary">Update data</a>
           </div>
@@ -63,9 +63,8 @@
             <h4 class="my-0 fw-normal"><b>D</b>elete</h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title CRUD-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
             <ul class="list-unstyled mt-3 mb-4">
-              <li>30 users included</li>
+              <li>Click in Delete to remove</li>
             </ul>
             <button type="button" class="w-100 btn btn-lg btn-danger">Delete data</button>
           </div>
@@ -73,5 +72,5 @@
       </div>
     </div>
 
-  </main>
+  </div>
   {% endblock %}
