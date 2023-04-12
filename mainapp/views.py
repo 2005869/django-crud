@@ -1,6 +1,6 @@
 import django.contrib.messages
 from django.shortcuts import render
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView
 from django.urls import reverse_lazy
 from . import models
 from django.contrib.messages.views import SuccessMessageMixin
@@ -18,3 +18,7 @@ class CreateData(SuccessMessageMixin, CreateView):
     fields = ['name', 'age']
     success_url = reverse_lazy('mainapp:index')
     success_message = "%(name)s was created successfully"
+
+
+class ReadData(ListView):
+    model = models.NameModel

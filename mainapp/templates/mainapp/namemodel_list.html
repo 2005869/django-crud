@@ -1,0 +1,28 @@
+{% extends 'mainapp/base.html' %}
+{% block content %}
+    <div class="CRUD-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal">CRUD</h1>
+      <p class="fs-5 text-muted">An example how to Read data in DJANGO.</p>
+    </div>
+<div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name:</th>
+            <th scope="col">Age</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for object in object_list %}
+    <tr>
+      <th scope="row">{{ object.id }}</th>
+      <td>{{ object.name }}</td>
+      <td>{{ object.age }}</td>
+    </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+</div>
+  </header>
+{% endblock %}
