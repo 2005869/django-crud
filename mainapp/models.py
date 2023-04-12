@@ -10,6 +10,9 @@ class NameModel(models.Model):
     def get_absolute_url(self):
         return reverse("mainapp:update", kwargs={"pk": self.pk})
 
+    def get_absolute_url2(self):
+        return reverse("mainapp:delete", kwargs={"pk": self.pk})
+
     class Meta:
         verbose_name = 'Name'
         verbose_name_plural = 'Names'

@@ -20,7 +20,11 @@
       <th scope="row">{{ object.id }}</th>
       <td>{{ object.name }}</td>
       <td>{{ object.age }}</td>
-        <td><a href="{{ object.get_absolute_url }}" class="btn btn-warning">Edit</a></td>
+        <td>
+            <a href="{{ object.get_absolute_url }}" class="btn btn-warning">Edit</a>
+            |
+            <a href="{{ object.get_absolute_url2 }}" class="btn btn-danger">Delete</a>
+        </td>
     </tr>
     {% endfor %}
         </tbody>

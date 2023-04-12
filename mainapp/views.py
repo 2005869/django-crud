@@ -1,6 +1,7 @@
 import django.contrib.messages
 from django.shortcuts import render
 from django.views.generic import CreateView, ListView, UpdateView
+from django.views.generic.edit import DeleteView
 from django.urls import reverse_lazy
 from . import models
 from django.contrib.messages.views import SuccessMessageMixin
@@ -29,3 +30,9 @@ class UpdateData(SuccessMessageMixin, UpdateView):
     fields = ['name', 'age']
     success_url = reverse_lazy('mainapp:index')
     success_message = '%(name)s was updated successfully'
+
+
+class DeleteData(SuccessMessageMixin, DeleteView):
+    model = models.NameModel
+    success_url = reverse_lazy('mainapp:index')
+    success_message = 'Data was deleted successfully'
